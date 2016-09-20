@@ -3,6 +3,7 @@
 var assert = require('chai').assert;
 var H = require('./harness');
 var ottoman = H.lib;
+var ottomanType = ottoman.ottomanType;
 
 describe('Models', function () {
   // Add long timeout in case of slow response on CI build servers.
@@ -96,8 +97,8 @@ describe('Models', function () {
       var x = new TestMdl();
       var xJson = x.toCoo();
 
-      assert.typeOf(xJson._type, 'string');
-      assert.equal(xJson._type, ottoman.nsPrefix() + modelId);
+      assert.typeOf(xJson[ottomanType], 'string');
+      assert.equal(xJson[ottomanType], ottoman.nsPrefix() + modelId);
       assert.typeOf(xJson._id, 'string');
       assert.equal(xJson._id, x._id);
       assert.isUndefined(xJson.name);
@@ -439,7 +440,7 @@ describe('Models', function () {
       var xJson = x.toCoo();
 
       assert.instanceOf(xJson.when, Object);
-      assert.equal(xJson.when._type, 'Date');
+      assert.equal(xJson.when[ottomanType], 'Date');
       assert.equal(xJson.when.v, x.when.toISOString());
     });
   });
