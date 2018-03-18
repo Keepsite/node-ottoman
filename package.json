@@ -21,7 +21,7 @@
     "uuid": "~2.0.1"
   },
   "optionalDependencies": {
-    "couchbase": "~2.2.2"
+    "couchbase": "~2.4.1"
   },
   "devDependencies": {
     "chai": "~3.3.0",
@@ -33,7 +33,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/couchbaselabs/ottoman.git"
+    "url": "http://github.com/couchbaselabs/node-ottoman.git"
   },
   "version": "1.0.4"
 }
